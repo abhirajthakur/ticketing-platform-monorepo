@@ -18,7 +18,7 @@ export const events = pgTable("events", {
   description: text().notNull(),
 
   totalTickets: integer("total_tickets").notNull(),
-  boockedTickets: integer("booked_tickets").notNull().default(0),
+  bookedTickets: integer("booked_tickets").notNull().default(0),
 
   priceFloor: real("price_floor").notNull(),
   priceCeiling: real("price_ceiling").notNull(),
