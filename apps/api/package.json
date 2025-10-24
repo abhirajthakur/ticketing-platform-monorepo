@@ -3,17 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "echo 'Setup your backend framework (NestJS/Express) and update this script'",
-    "build": "echo 'Add your build script here'",
-    "start": "echo 'Add your start script here'",
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "lint": "eslint . --max-warnings 0",
     "type-check": "tsc --noEmit"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@repo/database": "workspace:*",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@types/express": "^5.0.3",
     "@types/node": "^22.15.3",
+    "tsx": "^4.19.2",
     "typescript": "5.9.2"
   }
 }
