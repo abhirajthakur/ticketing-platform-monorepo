@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import { db } from ".";
+import { db } from "./index";
 import { bookings, events } from "./schema";
 
 async function seed() {
@@ -17,7 +17,7 @@ async function seed() {
         venue: "Open Air Theater",
         description: "A grand music festival featuring top artists.",
         totalTickets: 1000,
-        boockedTickets: 150,
+        bookedTickets: 150,
         priceFloor: 20.0,
         priceCeiling: 100.0,
         pricingRules: { demandThreshold: 0.8, increaseRate: 0.1 },
@@ -29,7 +29,7 @@ async function seed() {
         venue: "Convention Center",
         description: "Annual conference on the latest technology trends.",
         totalTickets: 500,
-        boockedTickets: 50,
+        bookedTickets: 50,
         priceFloor: 50.0,
         priceCeiling: 300.0,
         pricingRules: { demandThreshold: 0.9, increaseRate: 0.15 },
