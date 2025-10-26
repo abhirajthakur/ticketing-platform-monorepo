@@ -12,7 +12,10 @@ router.get(
       .select()
       .from(events)
       .where(eq(events.id, eventId));
-    if (!event) return res.status(404).json({ error: "Event not found" });
+
+    if (!event) {
+      return res.status(404).json({ error: "Event not found" });
+    }
 
     const [bookingData] = await db
       .select({
@@ -38,7 +41,7 @@ router.get(
   },
 );
 
-router.get("/summary", async (_req, res) => {
+router.get("/summary", async (_req: express.Request, res: express.Response) => {
   const [summary] = await db
     .select({
       totalEvents: count(events.id),
