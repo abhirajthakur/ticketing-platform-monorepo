@@ -20,7 +20,7 @@ async function seed() {
         bookedTickets: 150,
         priceFloor: 20.0,
         priceCeiling: 100.0,
-        pricingRules: { demandThreshold: 0.8, increaseRate: 0.1 },
+        pricingRules: { basePrice: 50.0, demandThreshold: 0.8, increaseRate: 0.1 },
       },
       {
         id: randomUUID(),
@@ -32,7 +32,7 @@ async function seed() {
         bookedTickets: 50,
         priceFloor: 50.0,
         priceCeiling: 300.0,
-        pricingRules: { demandThreshold: 0.9, increaseRate: 0.15 },
+        pricingRules: { basePrice: 150.0, demandThreshold: 0.9, increaseRate: 0.15 },
       },
     ])
     .execute();
