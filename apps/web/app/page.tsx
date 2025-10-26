@@ -1,69 +1,60 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <header className="border-b border-slate-700/50 backdrop-blur-sm bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-8 py-6">
-          <h1 className="text-3xl font-light tracking-tight text-slate-100">
-            Ticketing System
-          </h1>
-        </div>
-      </header>
-
-      <main className="max-w-5xl mx-auto px-8 py-16">
-        <div className="space-y-12">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-2xl mx-auto text-center space-y-8">
           <div className="space-y-4">
-            <h2 className="text-4xl font-light text-slate-100 tracking-tight">
-              Dynamic Event Pricing
-            </h2>
-            <p className="text-lg text-slate-400 leading-relaxed max-w-2xl">
-              A sophisticated platform for managing events with intelligent
-              pricing algorithms and real-time availability tracking.
+            <h1 className="text-5xl font-bold tracking-tight text-slate-900">
+              Event Booking
+            </h1>
+            <p className="text-xl text-slate-600">
+              Discover and book tickets to amazing events
             </p>
           </div>
 
-          <div className="grid gap-6 mt-12">
-            <div className="group bg-slate-800/40 border border-slate-700/50 rounded-lg p-8 hover:bg-slate-800/60 transition-all duration-300">
-              <h3 className="text-xl font-light text-slate-200 mb-3">
-                Database Architecture
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/events">
+              <button className="px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors w-full sm:w-auto">
+                Browse Events
+              </button>
+            </Link>
+            <Link href="/my-bookings">
+              <button className="px-8 py-3 bg-white text-slate-900 border border-slate-300 rounded-lg font-medium hover:bg-slate-50 transition-colors w-full sm:w-auto">
+                My Bookings
+              </button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+            <div className="p-6 rounded-lg bg-white border border-slate-200">
+              <h3 className="font-semibold text-slate-900 mb-2">
+                Easy Booking
               </h3>
-              <p className="text-slate-400 leading-relaxed">
-                Design and implement a robust schema for events, pricing tiers,
-                and booking management.
+              <p className="text-sm text-slate-600">
+                Book tickets in just a few clicks with real-time pricing
               </p>
             </div>
-
-            <div className="group bg-slate-800/40 border border-slate-700/50 rounded-lg p-8 hover:bg-slate-800/60 transition-all duration-300">
-              <h3 className="text-xl font-light text-slate-200 mb-3">
-                API Infrastructure
+            <div className="p-6 rounded-lg bg-white border border-slate-200">
+              <h3 className="font-semibold text-slate-900 mb-2">
+                Live Updates
               </h3>
-              <p className="text-slate-400 leading-relaxed">
-                Configure secure endpoints for event creation, pricing
-                calculations, and transaction handling.
+              <p className="text-sm text-slate-600">
+                See price changes and availability in real-time
               </p>
             </div>
-
-            <div className="group bg-slate-800/40 border border-slate-700/50 rounded-lg p-8 hover:bg-slate-800/60 transition-all duration-300">
-              <h3 className="text-xl font-light text-slate-200 mb-3">
-                Event Interface
+            <div className="p-6 rounded-lg bg-white border border-slate-200">
+              <h3 className="font-semibold text-slate-900 mb-2">
+                Track Bookings
               </h3>
-              <p className="text-slate-400 leading-relaxed">
-                Build an elegant listing experience with filtering, search, and
-                detailed event views.
-              </p>
-            </div>
-
-            <div className="group bg-slate-800/40 border border-slate-700/50 rounded-lg p-8 hover:bg-slate-800/60 transition-all duration-300">
-              <h3 className="text-xl font-light text-slate-200 mb-3">
-                Booking Flow
-              </h3>
-              <p className="text-slate-400 leading-relaxed">
-                Create a seamless reservation process with dynamic pricing and
-                instant confirmation.
+              <p className="text-sm text-slate-600">
+                View all your bookings and compare prices paid
               </p>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

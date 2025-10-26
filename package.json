@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/ticketing-platform-monorepo"
+    "url": "https://github.com/abhirajthakur/ticketing-platform-monorepo"
   },
   "scripts": {
     "build": "turbo run build",
