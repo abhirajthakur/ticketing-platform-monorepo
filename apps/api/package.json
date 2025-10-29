@@ -9,6 +9,8 @@
     "lint": "eslint . --max-warnings 0",
     "type-check": "tsc --noEmit",
     "test": "vitest",
+    "test:integration": "vitest run tests/integration",
+    "test:concurrency": "vitest run tests/concurrency.test.ts",
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
