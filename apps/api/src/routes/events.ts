@@ -69,7 +69,14 @@ router.post("/", async (req: express.Request, res: express.Response) => {
       pricingRules,
     } = req.body;
 
-    if (!name || !date || !totalTickets || !priceFloor || !venue) {
+    if (
+      !name ||
+      !date ||
+      totalTickets === undefined ||
+      totalTickets === null ||
+      !priceFloor ||
+      !venue
+    ) {
       return res.status(400).json({
         error:
           "Missing required fields: name, date, totalTickets, priceFloor, venue",

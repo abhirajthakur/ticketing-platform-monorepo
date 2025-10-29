@@ -79,7 +79,13 @@ function inventoryBasedAdjustment(
   }
   const remaining = totalTickets - bookedTickets;
   const ratio = remaining / totalTickets;
-  return ratio < 0.2 ? 0.25 : 0.0; // +25% if less than 20% remaining
+
+  if (ratio < 0.2) {
+    return 0.25; // +25% if less than 20% remaining
+  } else if (ratio <= 0.5) {
+    return 0.1; // +10% if 50% or less remaining
+  }
+  return 0.0;
 }
 
 function getTimeBasedDescription(eventDate: Date, now: Date): string {
@@ -107,6 +113,8 @@ function getInventoryDescription(
 
   if (ratio < 0.2) {
     return `Less than 20% remaining (${remaining}/${totalTickets}) (+25%)`;
+  } else if (ratio <= 0.5) {
+    return `50% or less remaining (${remaining}/${totalTickets}) (+10%)`;
   }
   return `${remaining}/${totalTickets} tickets remaining (no adjustment)`;
 }

@@ -8,7 +8,7 @@ const router: express.Router = express.Router();
 router.post("/", async (req: express.Request, res: express.Response) => {
   const { eventId, userEmail, quantity } = req.body;
 
-  if (!eventId || !userEmail || !quantity) {
+  if (!eventId || !userEmail || quantity === undefined || quantity === null) {
     return res.status(400).json({
       error: "Missing required fields: eventId, userEmail, quantity",
     });
@@ -137,6 +137,9 @@ router.get("/", async (req: express.Request, res: express.Response) => {
 
       return res.json(userBookings);
     }
+
+    // This should not happen due to the validation above, but just in case
+    return res.json([]);
   } catch (err) {
     console.error("Error fetching bookings:", err);
     return res.status(500).json({ error: "Failed to fetch bookings" });
